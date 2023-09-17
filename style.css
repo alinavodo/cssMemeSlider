@@ -119,3 +119,97 @@ label{
 #btn5:checked ~ #navigation .text{
 	margin-left: -400%;
 }
+
+.circle{
+    border-radius: 10px; 
+	width: 15px;
+	height: 15px;
+	background: #48D1CC;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#active{ 
+    display: flex;
+	text-align: center;
+   
+}
+
+.circle:hover{
+    background: #AFEEEE;
+}
+
+
+label:hover .blue {
+    border-radius: 10px; 
+	width: 15px;
+	height: 15px;
+    background: #AFEEEE;
+
+}
+
+#btn1:checked ~ #navigation #active label:nth-child(1),
+#btn2:checked ~ #navigation #active label:nth-child(2),
+#btn3:checked ~ #navigation #active label:nth-child(3),
+#btn4:checked ~ #navigation #active label:nth-child(4),
+#btn5:checked ~ #navigation #active label:nth-child(5){
+
+    margin-top: 2px;
+    border: 3px solid white;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background: #48D1CC;
+}
+
+
+#btn1:checked ~ #navigation #active label:nth-child(1),
+#btn2:checked ~ #navigation #active label:nth-child(2),
+#btn3:checked ~ #navigation #active label:nth-child(3),
+#btn4:checked ~ #navigation #active label:nth-child(4),
+#btn5:checked ~ #navigation #active label:nth-child(5){
+
+    border-radius: 10px; 
+	width: 15px;
+	height: 15px;
+    background: #AFEEEE;
+}
+
+#slides .image{ 
+	transition: all 900ms ease-in-out;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-top: 25px;
+    flex-direction: row-reverse;
+}
+
+.text{
+    transition: all 900ms ease-in-out;
+}
+
+
+@media (max-width: 780px) {
+
+    .navigation{
+        display: block;
+    }
+
+    #text_slider{
+        text-align: left;
+        width: auto;   
+    }
+
+    #active {
+        display: flex;
+        justify-content: center;
+    }
+}
