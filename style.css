@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    height: 100vw;
+}
+
+/*#slider { /*положение слайдера
+    position: relative;
+	text-align: center;
+    top: 10px;
+}*/
+
+#slider{ /*центровка слайдера*/
+	margin: 0 auto;
+}
+
+/*#slides article{ /*все изображения справа друг от доруга
+	width: 20%;
+	float: left;
+}*/
+
+.aaa{ 
+	width: 20%;
+
+	/*float: left;*/
+}
+
+
+
+#text_slider{
+        /* margin-top: 50px; */
+        height: 50px;
+        max-width: 700px;
+        width: 50%;
+        overflow: hidden;
+        padding-top: 10px;
+}
+
+
+#slides .image{ /*устанавливает общий размер блока с изображениями*/
+	width: 500%;
+	line-height: 0;
+	display: flex;
+}
+
+#text_slider .text{ /*устанавливает общий размер блока с изображениями*/
+	width: 500%;
+	line-height: 0;
+	display: flex;
+   
+}
+
+#overflow{ /*сркывает все, что находится за пределами этого блока*/
+	width: 100%;
+	overflow: hidden;
+}
+
+.aaa img{ /*размер изображений слайдера*/
+	width: 100%;
+}
+
+.qqq{ /*размер изображений слайдера*/
+	width: 100%;
+}
+/*#desktop:checked ~ #slider{ /*размер всего слайдера
+	max-width: 960px; /*максимальнная длинна
+}*/
+
+#slider{ /*размер всего слайдера*/
+	max-width: 700px; /*максимальнная длинна*/
+}
+
+
+
+label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
+	cursor: pointer;
+}
+
+.wrapper input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
+	display: none;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image {
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image{
+	margin-left: -300%;
+}
+
+#switch5:checked ~ #slides .image{
+	margin-left: -400%;
+}
+
+
+#switch1:checked ~ #navigation .text{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #navigation .text {
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #navigation .text{
+	margin-left: -200%;
+}
+
+#switch4:checked ~ #navigation .text{
+	margin-left: -300%;
+}
+
+#switch5:checked ~ #navigation .text{
+	margin-left: -400%;
+}
+
+/*#controls{ /*положение блока всех управляющих элементов
+
+}*/
+
+#active label{ /*стиль отдельного переключателя*/
+	border-radius: 10px; /*скругление углов*/
+	display: inline-block; /*расположение в строку*/
+	width: 15px;
+	height: 15px;
+	background: #bbb;
+}
+
+#active{ /*расположение блока с переключателями*/
+
+	text-align: center;
+   
+}
+
+#active label:hover{ /*поведение чекбокса при наведении*/
+	background: #76c8ff;
+	border-color: #777 !important; /*выполнение в любом случае*/
+}
+
+
+#switch1:checked ~ #navigation #active  label:nth-child(1),
+#switch2:checked ~ #navigation #active label:nth-child(2),
+#switch3:checked ~ #navigation #active label:nth-child(3),
+#switch4:checked ~ #navigation #active label:nth-child(4),
+#switch5:checked ~ #navigation #active label:nth-child(5){
+	background: red!important;
+	border-color: #18a3dd !important;
+}
+
+/*
+.blu{
+    background: #18a3dd !important;
+}*/
+#switch1:checked ~ .blue{
+	background: #18a3dd;
+	border-color: #18a3dd !important;
+}
+
+#slides .image{ /*анимация пролистывания изображений*/
+	transition: all 900ms ease-in-out;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    padding-top: 25px;
+}
+
+.qqq{
+    color: white;
+}
+
+
+@media (max-width: 780px) {
+
+    .navigation{
+        display: block;
+    }
+
+    #text_slider{
+        text-align: left;
+        
+}
+}
+
+
+/*<div class="wrapper">
+        <div class="slider" id="slider">
+            <input checked type="radio" name="slider" id="switch1">
+            <input type="radio" name="slider" id="switch2">
+            <input type="radio" name="slider" id="switch3">
+            <input type="radio" name="slider" id="switch4">
+            <input type="radio" name="slider" id="switch5">
+            <div class="slides">
+                <div id="overflow">
+                    <div class="image">
+                        <div class="slide_image"><img src="img/1.jpg"></div>
+                        <div class="slide_image"><img src="img/2.jpg"></div>
+                        <div class="slide_image"><img src="img/3.jpg"></div>
+                        <div class="slide_image"><img src="img/4.jpg"></div>
+                        <div class="slide_image"><img src="img/5.jpg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation" id="navigation">
+                <div id="active">
+                    <label for="switch1"></label>
+                        <label for="switch2"></label>
+                        <label for="switch3"></label>
+                        <label for="switch4"></label>
+                        <label for="switch5"></label>
+                </div>
+                <div id="text_slider">
+                    <div class="text">
+                        <label for="switch1"></label>
+                        <label for="switch2"></label>
+                        <label for="switch3"></label>
+                        <label for="switch4"></label>
+                        <label for="switch5"></label>
+                    </div>
+                </div>
+            </div>          
+    </div>
+</body>
+</html>*/
